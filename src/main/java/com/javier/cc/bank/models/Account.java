@@ -3,8 +3,6 @@ package com.javier.cc.bank.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "accounts")
@@ -18,19 +16,23 @@ public class Account{
     @Column(name = "number")
     private long number;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "type")
-    private String type;
+    @Enumerated(value = EnumType.STRING)
+    private TypeAccount typeAccount;
+
 
     @ManyToOne
     @JsonIgnoreProperties({"accounts"})
     @JoinColumn(name = "customer_id", nullable = false )
     private Customer customer;
 
-    public Account(long number, String type, Customer customer) {
+    public Account(long number, TypeAccount type, Customer customer) {
         this.number = number;
-        this.type = type;
+        TypeAccount typeAccount = type;
         this.customer = customer;
     }
+
     public Account(){}
 
     public Customer getCustomer() {
@@ -45,8 +47,8 @@ public class Account{
         this.number = number;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(TypeAccount type) {
+        TypeAccount typeAccount = type;
     }
 
     public Long getId() {
@@ -57,8 +59,8 @@ public class Account{
         return number;
     }
 
-    public String getType() {
-        return type;
+    public TypeAccount getType(TypeAccount typeAccount) {
+        return typeAccount;
     }
 
 

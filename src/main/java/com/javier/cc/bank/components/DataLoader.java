@@ -2,6 +2,7 @@ package com.javier.cc.bank.components;
 
 import com.javier.cc.bank.models.Account;
 import com.javier.cc.bank.models.Customer;
+import com.javier.cc.bank.models.TypeAccount;
 import com.javier.cc.bank.repositories.AccountRepository;
 import com.javier.cc.bank.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,38 +40,38 @@ public class DataLoader implements ApplicationRunner {
         Customer customer5 = new Customer("David Horse", " 3 Newington Road", password5, "davidhorse@gmail.com", "David");
         customerRepository.save(customer5);
 
-        Account accountS1 = new Account(1234, "saving", customer1);
+        Account accountS1 = new Account(1234, TypeAccount.SAVINGS, customer1);
         accountRepository.save(accountS1);
-        Account accountS2 = new Account(1235, "saving", customer2);
+        Account accountS2 = new Account(1235, TypeAccount.SAVINGS, customer2);
         accountRepository.save(accountS2);
-        Account accountS3 = new Account(1236, "saving", customer3);
+        Account accountS3 = new Account(1236, TypeAccount.SAVINGS, customer3);
         accountRepository.save(accountS3);
-        Account accountS4 = new Account(1237, "saving", customer4);
+        Account accountS4 = new Account(1237, TypeAccount.SAVINGS, customer4);
         accountRepository.save(accountS4);
-        Account accountS5 = new Account(1238, "saving", customer5);
+        Account accountS5 = new Account(1238, TypeAccount.SAVINGS, customer5);
         accountRepository.save(accountS5);
 
-        Account accountM1 = new Account(2234, "market", customer1);
+        Account accountM1 = new Account(2234, TypeAccount.MARKET, customer1);
         accountRepository.save(accountM1);
-        Account accountM2 = new Account(2235, "market", customer2);
+        Account accountM2 = new Account(2235, TypeAccount.MARKET, customer2);
         accountRepository.save(accountM2);
-        Account accountM3 = new Account(2236, "market", customer3);
+        Account accountM3 = new Account(2236, TypeAccount.MARKET, customer3);
         accountRepository.save(accountM3);
-        Account accountM4 = new Account(2237, "market", customer4);
+        Account accountM4 = new Account(2237, TypeAccount.MARKET, customer4);
         accountRepository.save(accountM4);
-        Account accountM5 = new Account(2238, "market", customer5);
+        Account accountM5 = new Account(2238, TypeAccount.MARKET, customer5);
         accountRepository.save(accountM5);
 
 
-        Account accountB1 = new Account(3234, "brokerage", customer1);
+        Account accountB1 = new Account(3234, TypeAccount.BROKERAGE, customer1);
         accountRepository.save(accountB1);
-        Account accountB2 = new Account(3235, "brokerage", customer2);
+        Account accountB2 = new Account(3235, TypeAccount.BROKERAGE, customer2);
         accountRepository.save(accountB2);
-        Account accountB3 = new Account(3236, "brokerage", customer3);
+        Account accountB3 = new Account(3236, TypeAccount.BROKERAGE, customer3);
         accountRepository.save(accountB3);
-        Account accountB4 = new Account(3237, "brokerage", customer4);
+        Account accountB4 = new Account(3237, TypeAccount.BROKERAGE, customer4);
         accountRepository.save(accountB4);
-        Account accountB5 = new Account(3238, "brokerage", customer5);
+        Account accountB5 = new Account(3238, TypeAccount.BROKERAGE, customer5);
         accountRepository.save(accountB5);
 
 

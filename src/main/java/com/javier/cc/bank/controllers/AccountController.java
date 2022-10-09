@@ -2,6 +2,7 @@ package com.javier.cc.bank.controllers;
 
 import com.javier.cc.bank.models.Account;
 import com.javier.cc.bank.models.Customer;
+import com.javier.cc.bank.models.TypeAccount;
 import com.javier.cc.bank.repositories.AccountRepository;
 import com.javier.cc.bank.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,17 @@ public class AccountController {
         return new ResponseEntity(accountRepository.findById(id), HttpStatus.OK);
     }
 
-
     @PostMapping("/accounts")
-    public ResponseEntity<Account> postCourse(@RequestBody Account account){
+    public ResponseEntity<Account> postAccount(@RequestBody Account account){
         accountRepository.save(account);
         return new ResponseEntity<>(account, HttpStatus.CREATED);
     }
 
     @PutMapping(value="/accounts/{id}")
-    public ResponseEntity<Account> putCourse(@RequestBody Account account, @PathVariable Long id){
+    public ResponseEntity<Account> putAccount(@RequestBody Account account, @PathVariable Long id, TypeAccount typeAccount){
         Account accountToUpdate = accountRepository.findById(id).get();
         accountToUpdate.setNumber(account.getNumber());
-        accountToUpdate.setType(account.getType());
+        accountToUpdate.setType(account.getType(typeAccount));
         return new ResponseEntity<>(accountToUpdate, HttpStatus.OK);
     }
 
@@ -68,9 +68,9 @@ public class AccountController {
 
         return new ResponseEntity<>(customerRepository.findAllById(Collections.singleton((id))), HttpStatus.OK);
     }
-    @GetMapping(value = "/accounts/{type}")
-    public ResponseEntity<Account> getAccountByType(@PathVariable String type){
-        return new ResponseEntity(accountRepository.findAllByType(type), HttpStatus.OK);
+    @GetMapping(value = "/accounts/{TypeAccount}")
+    public ResponseEntity<Account> getAccountByType(@PathVariable TypeAccount typeAccount){
+        return new ResponseEntity(accountRepository.findAllByTypeAccount(typeAccount), HttpStatus.OK);
     }
 
     @GetMapping(value = "/accounts/{number}")
