@@ -16,6 +16,12 @@ public class Account{
     @Column(name = "number")
     private long number;
 
+    @Embeddable
+    public enum TypeAccount{
+        SAVINGS, MARKET, BROKERAGE;
+    }
+
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "type")
     @Enumerated(value = EnumType.STRING)

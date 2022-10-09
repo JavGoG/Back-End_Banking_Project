@@ -2,7 +2,6 @@ package com.javier.cc.bank.controllers;
 
 import com.javier.cc.bank.models.Account;
 import com.javier.cc.bank.models.Customer;
-import com.javier.cc.bank.models.TypeAccount;
 import com.javier.cc.bank.repositories.AccountRepository;
 import com.javier.cc.bank.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class AccountController {
     }
 
     @PutMapping(value="/accounts/{id}")
-    public ResponseEntity<Account> putAccount(@RequestBody Account account, @PathVariable Long id, TypeAccount typeAccount){
+    public ResponseEntity<Account> putAccount(@RequestBody Account account, @PathVariable Long id, Account.TypeAccount typeAccount){
         Account accountToUpdate = accountRepository.findById(id).get();
         accountToUpdate.setNumber(account.getNumber());
         accountToUpdate.setType(account.getType(typeAccount));
@@ -69,8 +68,8 @@ public class AccountController {
         return new ResponseEntity<>(customerRepository.findAllById(Collections.singleton((id))), HttpStatus.OK);
     }
     @GetMapping(value = "/accounts/{TypeAccount}")
-    public ResponseEntity<Account> getAccountByType(@PathVariable TypeAccount typeAccount){
-        return new ResponseEntity(accountRepository.findAllByTypeAccount(typeAccount), HttpStatus.OK);
+    public ResponseEntity<Account> getAccountByType(@PathVariable Account.TypeAccount typeAccount){
+        return new ResponseEntity(accountRepository.findAllBytypeAccount(typeAccount), HttpStatus.OK);
     }
 
     @GetMapping(value = "/accounts/{number}")
