@@ -1,4 +1,4 @@
-package com.javier.cc.bank;
+package com.javier.cc.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
