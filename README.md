@@ -1,8 +1,8 @@
 # Back-end Banking project
 
-## Why this project
+## Why this project?
 
-I wanted to do a Banking application to figure out how that could be, because I would like to work for a bank as back-end developer. I tried to do a functional
+I wanted to do a Banking application to figure out how that could be, because I would like to work for a bank as back-end developer. I used the instructions and best practices that I learnt at CodeClan.
 
 ## Technical Review
 
