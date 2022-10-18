@@ -21,6 +21,15 @@ public class Account{
         SAVINGS, MARKET, BROKERAGE;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", number=" + number +
+                ", typeAccount=" + typeAccount +
+                ", customer=" + customer +
+                '}';
+    }
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "type")

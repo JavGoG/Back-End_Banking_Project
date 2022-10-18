@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -23,6 +24,20 @@ public class Customer {
     private char[] password;
     @Column(name = "email")
     private String email;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password=" + Arrays.toString(password) +
+                ", email='" + email + '\'' +
+                ", accounts=" + accounts +
+                '}';
+    }
+
     @JsonIgnoreProperties({"customer"})
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<com.javier.cc.bank.models.Account> accounts;
