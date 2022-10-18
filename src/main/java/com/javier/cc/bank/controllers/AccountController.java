@@ -68,8 +68,10 @@ public class AccountController {
         return new ResponseEntity<>(customerRepository.findAllById(Collections.singleton((id))), HttpStatus.OK);
     }
     @GetMapping(value = "/accounts/{TypeAccount}")
-    public ResponseEntity<Account> getAccountByType(@PathVariable Account.TypeAccount typeAccount){
-        return new ResponseEntity(accountRepository.findAllBytypeAccount(typeAccount), HttpStatus.OK);
+    public ResponseEntity<List<Account>> getAccountByType(@RequestParam(value = "typeAccount", required = false) Account.TypeAccount typeAccount){
+        if (typeAccount != null) {
+            return new ResponseEntity(accountRepository.findAllBytypeAccount(typeAccount), HttpStatus.OK);
+        } return new ResponseEntity<>(accountRepository.findAll(),HttpStatus.OK);
     }
 
     @GetMapping(value = "/accounts/{number}")

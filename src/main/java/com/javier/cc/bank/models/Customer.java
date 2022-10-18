@@ -1,6 +1,5 @@
 package com.javier.cc.bank.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -26,7 +25,7 @@ public class Customer {
     private String email;
     @JsonIgnoreProperties({"customer"})
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-    private List<Account> accounts;
+    private List<com.javier.cc.bank.models.Account> accounts;
 
     public Customer() {
     }
@@ -52,7 +51,7 @@ public class Customer {
         this.address = address;
     }
 
-    public void setAccounts(List<Account> accounts) {
+    public void setAccounts(List<com.javier.cc.bank.models.Account> accounts) {
         this.accounts = accounts;
     }
 
@@ -64,7 +63,7 @@ public class Customer {
         return address;
     }
 
-    public List<Account> getAccounts() {
+    public List<com.javier.cc.bank.models.Account> getAccounts() {
         return accounts;
     }
 
