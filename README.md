@@ -14,7 +14,12 @@ This database has got two main tables, 'accounts' and 'customers'.
 
 <img width="330" alt="image" src="https://user-images.githubusercontent.com/85517520/196669063-e126312e-b08b-433d-b1b0-618dad839f49.png">
 
-The 'accounts' table is @manyToOne relationship and the 'customers' table is @oneToMany relationship. The foreign key in the 'accounts' table is 'customer_id' this behaviour is given by the annotation @JoinColumn. 
+The 'accounts' table is @manyToOne relationship and the 'customers' table is @oneToMany relationship. The foreign key in the 'accounts' table is 'customer_id' this behaviour is given by the annotation @JoinColumn.
+
+I used the Insomnia application to connect with the server to comunicate with the database.
+
+<img width="430" alt="Screenshot 2022-10-19 at 12 02 02" src="https://user-images.githubusercontent.com/85517520/196674480-c4785cb0-8813-489b-bcbf-e70a333254f7.png">
+
 
 ## Functionality
 
