@@ -74,8 +74,8 @@ public class AccountController {
         } return new ResponseEntity<>(accountRepository.findAll(),HttpStatus.OK);
     }
 
-    @GetMapping(value = "/accounts/{number}")
+/*    @GetMapping(value = "/accounts/{number}")
     public ResponseEntity<Account> getAccountByNumber(@PathVariable Long number){
         return new ResponseEntity(accountRepository.findAllByNumber(number), HttpStatus.OK);
-    }
+    }*/
 }

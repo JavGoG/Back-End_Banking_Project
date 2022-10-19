@@ -25,18 +25,6 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password=" + Arrays.toString(password) +
-                ", email='" + email + '\'' +
-                ", accounts=" + accounts +
-                '}';
-    }
 
     @JsonIgnoreProperties({"customer"})
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
@@ -53,7 +41,18 @@ public class Customer {
         this.email = email;
         this.userName = userName;
     }
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password=" + Arrays.toString(password) +
+                ", email='" + email + '\'' +
+                ", accounts=" + accounts +
+                '}';
+    }
     public Long getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package com.javier.cc.bank.seeds;
+package com.javier.cc.bank.components;
 
 import com.javier.cc.bank.models.Account;
 import com.javier.cc.bank.models.Customer;
@@ -7,8 +7,9 @@ import com.javier.cc.bank.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class DataLoader implements ApplicationRunner {
 
     @Autowired
