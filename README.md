@@ -1,4 +1,4 @@
-# Back-end Banking project
+# Back-End Banking Project
 
 ## Why this project?
 
@@ -8,9 +8,9 @@ I wanted to do a Banking application to figure out how that could be, because I 
 
 This is a back-end desktop application built with Maven, written in Java 8 with Spring. The project was initialized with the Spring Boot initializr tool and 4 main dependences were added to it: Spring Web, Spring Data JPA, Spring Boot DevTools and PostGreSQL driver. The application works with a 'banking' database, previously created with the command 'createdb banking' on terminal.
 
-<img width="200" alt="image" src="https://user-images.githubusercontent.com/85517520/196668778-37caaf09-ce49-44be-a343-2a725c05d4d5.png">
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/85517520/196668778-37caaf09-ce49-44be-a343-2a725c05d4d5.png">
 
-This database has got two main tables, 'customers' and 'accounts'. 
+This database has got two main tables, 'accounts' and 'customers'. 
 
 <img width="330" alt="image" src="https://user-images.githubusercontent.com/85517520/196669063-e126312e-b08b-433d-b1b0-618dad839f49.png">
 
