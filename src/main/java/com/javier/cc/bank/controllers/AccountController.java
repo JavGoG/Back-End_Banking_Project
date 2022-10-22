@@ -21,18 +21,18 @@ public class AccountController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping(value = "/accounts/{id}")
+    @GetMapping(value = "/account/{id}")
     public ResponseEntity<Account> getAccount(@PathVariable Long id){
         return new ResponseEntity(accountRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping("/accounts")
+    @PostMapping("/account")
     public ResponseEntity<Account> postAccount(@RequestBody Account account){
         accountRepository.save(account);
         return new ResponseEntity<>(account, HttpStatus.CREATED);
     }
 
-    @PutMapping(value="/accounts/{id}")
+    @PutMapping(value="/account/{id}")
     public ResponseEntity<Account> putAccount(@RequestBody Account account, @PathVariable Long id, Account.TypeAccount typeAccount){
         Account accountToUpdate = accountRepository.findById(id).get();
         accountToUpdate.setNumber(account.getNumber());
@@ -40,13 +40,13 @@ public class AccountController {
         return new ResponseEntity<>(accountToUpdate, HttpStatus.OK);
     }
 
-    @DeleteMapping(value="/accounts/{id}")
+    @DeleteMapping(value="/account/{id}")
     public ResponseEntity<Long> deleteAccount(@PathVariable Long id){
         accountRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
-    @GetMapping(value="/accounts/{id}/customers")
+    @GetMapping(value="/account/{id}/customer")
     public ResponseEntity<List<Customer>> getCustomerForAccount(@PathVariable Long id,
                                                                 @RequestParam(name = "userName", required = false) String userName,
                                                                 @RequestParam(name = "email", required = false) String email,
@@ -67,15 +67,15 @@ public class AccountController {
 
         return new ResponseEntity<>(customerRepository.findAllById(Collections.singleton((id))), HttpStatus.OK);
     }
-    @GetMapping(value = "/accounts/{TypeAccount}")
-    public ResponseEntity<List<Account>> getAccountByType(@RequestParam(value = "typeAccount", required = false) Account.TypeAccount typeAccount){
+    @GetMapping(value = "/accounts/{type}")
+    public ResponseEntity<List<Account>> getAccountsByType(@RequestParam(value = "typeAccount", required = false) Account.TypeAccount typeAccount){
         if (typeAccount != null) {
             return new ResponseEntity(accountRepository.findAllBytypeAccount(typeAccount), HttpStatus.OK);
         } return new ResponseEntity<>(accountRepository.findAll(),HttpStatus.OK);
     }
 
-/*    @GetMapping(value = "/accounts/{number}")
-    public ResponseEntity<Account> getAccountByNumber(@PathVariable Long number){
+   @GetMapping(value = "/account/numbers")
+    public ResponseEntity<Account> getAccountByNumber(@RequestParam (value = "number", required = false) Long number){
         return new ResponseEntity(accountRepository.findAllByNumber(number), HttpStatus.OK);
-    }*/
+    }
 }
