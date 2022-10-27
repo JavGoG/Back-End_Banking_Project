@@ -27,7 +27,7 @@ The program creates, modifies, deletes and retrieves bank accounts from the 'cus
 
 ## Learning points
 
-I learnt how to test our program using Insomnia -this program is very alike to Postman-, making calls to the webserver to try what data returns these calls. I learnt how to make calls with different endpoints, like the use of query strings. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, @RequestParam extracts values from the query string. We can not make use of query string with @PathVariable.
+I learnt how to test our program using Insomnia -this program is very alike to Postman-, making different calls to the webserver to try what type of data is returned with the calls and how to create or eliminate values from the database typing the right commands. I learnt how to make calls with different endpoints. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with @PathVariable, in the other hand @RequestParam extracts values from the query string, this allow us to have a very simplified endpoints, because we do not have to hardcode every single route to get all the values from the database.
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/85517520/196667541-5b282986-584a-4804-aa26-ccf5405bbc39.png">
 
