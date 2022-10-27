@@ -23,11 +23,14 @@ I used the Insomnia application to connect with the server to comunicate with th
 
 ## Functionality
 
-The program creates, modifies, deletes and retrieves bank accounts from the 'customers' table, the same way works for the 'accounts' table. These operations are made using the unique and single identifier 'id' of every account, except for creating a new account or new customer.
+The program creates, modifies, deletes and retrieves bank accounts from the 'customers' table and the same way works for the 'accounts' table. These operations are made using the unique and single identifier 'id' of every account, except for creating a new account or new customer.
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/85517520/196667541-5b282986-584a-4804-aa26-ccf5405bbc39.png">
+
 
 ## Learning points
 
 I learnt how to test our program using Insomnia -this program is very alike to Postman-, making different calls to the webserver to try what type of data is returned with the calls and how to create or eliminate values from the database typing the right commands. I learnt how to make calls with different endpoints. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with @PathVariable, in the other hand @RequestParam extracts values from the query string, this allow us to have a very simplified endpoints, because we do not have to hardcode every single route to get all the values from the database.
+I learnt that our application needs to enable the CORS (Cross Origin Resource Sharing) to avoid conflicts with the front-end, to do so with Java and Spring we have to implement the method addCorsMappings() from the WebMvcConfigurer interface. The class which implements that method needs to have the @Configuration annotation to tell to Spring that a class declares one or more @Bean methods. This Spring bean are managed by the Inversion Of Control container which is related whith the dependency inyection.
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/85517520/196667541-5b282986-584a-4804-aa26-ccf5405bbc39.png">
 
