@@ -25,5 +25,9 @@ I used the Insomnia application to connect with the server to comunicate with th
 
 The program creates, modifies, deletes and retrieves bank accounts from the 'customers' table, the same way works for the 'accounts' table. These operations are made using the unique and single identifier 'id' of every account, except for creating a new account or new customer.
 
+## Learning points
+
+I learnt how to test our program using Insomnia -this program is very alike to Postman-, making calls to the webserver to try what data returns these calls. I learnt how to make calls with different endpoints, like the use of query strings. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, @RequestParam extracts values from the query string. We can not make use of query string with @PathVariable.
+
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/85517520/196667541-5b282986-584a-4804-aa26-ccf5405bbc39.png">
 
