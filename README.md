@@ -30,14 +30,19 @@ The program creates, modifies, deletes and retrieves bank accounts from the 'cus
 
 ## Learning points
 
-I learnt how to test our program using Insomnia -this program is very alike to Postman-, making different calls to the webserver to try what type of data is returned with the calls and how to create or eliminate values from the database typing the right commands. 
+I learnt how to test our program using Insomnia (this program is very alike to Postman), making different calls through the URL to try what type of data is returned with those calls.
 
-I learnt how to make calls with different endpoints. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with it. On the other hand @RequestParam extracts values from query strings, this allows us to have simplified endpoints, because we do not have to hardcode every single route to get the values that we want from the database.
+I learnt how to make calls with different endpoints to perfomr CRUD operations. 
+
+
+I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with it. On the other hand @RequestParam extracts values from query strings, this allows us to have simplified endpoints, because we do not have to hardcode every single route to get the values that we want from the database.
+
+
+I learnt how to write 'derived queries' or JPA Queries methods to perform CRUD operations on a database. Theses interface methods are defined in a interface which extends the interface JpaRepository.
+
+I learnt how to connect a query defined in a JPA Repository to a controller, to do so we need to create custom routes that are linked to those specified derived queries.
 
 I learnt that our application needs to enable CORS (Cross Origin Resource Sharing) to avoid conflicts with the front-end, to do so with Java and Spring we have to implement the method addCorsMappings() from the WebMvcConfigurer interface. 
 
-I learnt the importance of the relationship between classes to create different tables and the use of @ManyToMany and @OneToMany annotations.
+I learnt the importance of the relationship between classes to create tables and the use of @ManyToMany and @OneToMany annotations.
 
-I learnt how to write derived queries or JPA Queries methods to perform CRUD operations on the database. Theses methods are defined in a interface which extends the interface JpaRepository.
-
-I learnt that the Controller part 
