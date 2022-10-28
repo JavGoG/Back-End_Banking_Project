@@ -32,11 +32,9 @@ The program creates, modifies, deletes and retrieves bank accounts from the 'cus
 
 I learnt how to test our program using Insomnia (this program is very alike to Postman), making different calls through the URL to try what type of data is returned with those calls.
 
-I learnt how to make calls with different endpoints to perfomr CRUD operations. 
-
+I learnt how to make calls with different endpoints and routes to perform CRUD operations. 
 
 I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with it. On the other hand @RequestParam extracts values from query strings, this allows us to have simplified endpoints, because we do not have to hardcode every single route to get the values that we want from the database.
-
 
 I learnt how to write 'derived queries' or JPA Queries methods to perform CRUD operations on a database. Theses interface methods are defined in a interface which extends the interface JpaRepository.
 
