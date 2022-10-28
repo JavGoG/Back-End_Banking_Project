@@ -35,3 +35,9 @@ I learnt how to test our program using Insomnia -this program is very alike to P
 I learnt how to make calls with different endpoints. I learnt the difference between @RequestParam and @PathVariable, this last one extracts values from the URI path, it is very straight forward but we cannot use query strings with it. On the other hand @RequestParam extracts values from query strings, this allows us to have simplified endpoints, because we do not have to hardcode every single route to get the values that we want from the database.
 
 I learnt that our application needs to enable CORS (Cross Origin Resource Sharing) to avoid conflicts with the front-end, to do so with Java and Spring we have to implement the method addCorsMappings() from the WebMvcConfigurer interface. 
+
+I learnt the importance of the relationship between classes to create different tables and the use of @ManyToMany and @OneToMany annotations.
+
+I learnt how to write derived queries or JPA Queries methods to perform CRUD operations on the database. Theses methods are defined in a interface which extends the interface JpaRepository.
+
+I learnt that the Controller part 
