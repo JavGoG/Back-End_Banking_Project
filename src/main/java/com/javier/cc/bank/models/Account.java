@@ -1,9 +1,14 @@
 package com.javier.cc.bank.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.service.spi.InjectService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-
 @Entity
 @Table(name = "accounts")
 public class Account{
@@ -16,9 +21,13 @@ public class Account{
     @Column(name = "number")
     private long number;
 
+
     @Embeddable
     public enum TypeAccount{
         SAVINGS, MARKET, BROKERAGE;
+
+        @Autowired
+        TypeAccount(){}
     }
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
